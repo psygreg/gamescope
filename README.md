@@ -15,20 +15,33 @@ It runs on Mesa + AMD or Intel, and could be made to run on other Mesa/DRM drive
 
 If running RadeonSI clients with older cards (GFX8 and below), currently have to set `R600_DEBUG=nodcc`, or corruption will be observed until the stack picks up DRM modifiers support.
 
-## Building
+This is the last version that can be built on Ubuntu LTS 24.04. 
 
-```
-git submodule update --init
-meson build/
-ninja -C build/
-build/gamescope -- <game>
-```
+## Build & Install
 
-Install with:
+1. Clone this branch:
 
-```
-meson install -C build/ --skip-subprojects
-```
+`$ git clone --single-branch --branch ubuntu-lts https://github.com/psygreg/gamescope.git`
+
+2. Install needed dependencies to build `gamescope`
+
+`$ sudo apt install libbenchmark1.8.3 libdisplay-info1 libevdev-dev libgav1-1 libgudev-1.0-dev libmtdev-dev libseat1 libstb0 libwacom-dev libxcb-ewmh2 libxcb-shape0-dev libxcb-xfixes0-dev libxmu-headers libyuv0 libx11-xcb-dev libxres-dev 
+libxmu-dev libseat-dev libinput-dev libxcb-composite0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-res0-dev libcap-dev
+wayland-protocols libvulkan-dev libwayland-dev libx11-dev cmake pkg-config meson libxdamage-dev libxcomposite-dev libxcursor-dev
+libxxf86vm-dev libxtst-dev libxkbcommon-dev libdrm-dev libpixman-1-dev libdecor-0-dev glslang-tools libbenchmark-dev libsdl2-dev
+libglm-dev libeis-dev libavif-dev`
+
+3. Build `gamescope` with **meson** first
+
+`$ meson build/ `
+
+4. Build `gamescope` with **ninja**
+
+`$ ninja -C build/ `
+
+5. If the **ninja** build didn't produce any errors, install it to your system.
+
+`$ meson install -C build/ --skip-subprojects `
 
 ## Keyboard shortcuts
 
