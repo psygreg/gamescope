@@ -21,7 +21,7 @@ This is the last version that can be built on Ubuntu LTS 24.04.
 
 1. Clone this branch:
 
-`$ git clone --single-branch --branch ubuntu-lts https://github.com/psygreg/gamescope.git`
+`$ git clone --single-branch --branch ubuntu-lts https://github.com/psygreg/gamescope.git && cd gamescope`
 
 2. Install needed dependencies to build `gamescope`
 
